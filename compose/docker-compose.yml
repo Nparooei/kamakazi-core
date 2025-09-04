@@ -11,6 +11,8 @@ services:
     networks: [chain]
     ports:
       -"5000:8545"
+      - "30304:30303/tcp"
+      - "30304:30303/udp"
 
   archivenode:
     image: local/archivenode:1.16.0
