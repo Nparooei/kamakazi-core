@@ -7,7 +7,6 @@ services:
     hostname: nm1
     restart: unless-stopped
     ports:
-      - "8545:8545"
       - "30303:30303/tcp"
       - "30303:30303/udp"
     volumes:
@@ -36,7 +35,6 @@ services:
     hostname: nm3
     restart: unless-stopped
     ports:
-      - "18545:8545"
       - "30305:30303/tcp"
       - "30305:30303/udp"
     volumes:
