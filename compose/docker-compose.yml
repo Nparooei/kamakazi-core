@@ -10,7 +10,7 @@ services:
       - nm1-data:/opt/el/data
     networks: [chain]
     ports:
-      -"5000:8545"
+      - "5000:8545"
       - "30304:30303/tcp"
       - "30304:30303/udp"
 
@@ -25,7 +25,7 @@ services:
       - nm2-data:/opt/el/data
     networks: [chain]
     ports:
-      -"5001:8545"
+      - "5001:8545"
 
 networks:
   chain:
