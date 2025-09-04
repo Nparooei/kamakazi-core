@@ -9,4 +9,6 @@ el/nm2/keystore/
 el/nm1/config/enodekey
 el/nm2/config/enodekey
 el/nm3/config/enodekey
+el/kamakazi-archive-node/config/enodekey
+el/kamakazi-full-node/config/enodekey
 

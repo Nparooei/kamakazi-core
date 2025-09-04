@@ -1,39 +1,29 @@
 services:
-  nm1:
-    image: local/nm1:1.33.0
+  fullnode:
+    image: local/fullnode:1.16.0
     build:
-      context: ../el/nm1
-    container_name: nm1
-    hostname: nm1
+      context: ../el/kamakazi-full-node
+    container_name: fullnode
+    hostname: fullnode
     restart: unless-stopped
     volumes:
       - nm1-data:/opt/el/data
     networks: [chain]
+    ports:
+      -"5000:8545"
 
-  nm2:
-    image: local/nm2:1.33.0
+  archivenode:
+    image: local/archivenode:1.16.0
     build:
-      context: ../el/nm2
-    container_name: nm2
-    hostname: nm2
+      context: ../el/kamakazi-archive-node
+    container_name: archivenode
+    hostname: archivenode
     restart: unless-stopped
     volumes:
       - nm2-data:/opt/el/data
     networks: [chain]
-  
-  nm3:
-    image: local/nethermind-nm3:1.33.0
-    build:
-      context: ../el/nm3
-    container_name: nm3
-    hostname: nm3
-    restart: unless-stopped
     ports:
-      - "30305:30303/tcp"
-      - "30305:30303/udp"
-    volumes:
-      - nm3-data:/opt/el/data
-    networks: [chain]
+      -"5001:8545"
 
 networks:
   chain:
@@ -43,4 +33,3 @@ networks:
 volumes:
   nm1-data:
   nm2-data:
-  nm3-data:
