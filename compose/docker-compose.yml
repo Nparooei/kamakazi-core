@@ -1,0 +1,54 @@
+services:
+  nm1:
+    image: local/nm1:1.33.0
+    build:
+      context: ../el/nm1
+    container_name: nm1
+    hostname: nm1
+    restart: unless-stopped
+    ports:
+      - "8545:8545"
+      - "30303:30303/tcp"
+      - "30303:30303/udp"
+    volumes:
+      - nm1-data:/opt/el/data
+    networks: [chain]
+
+  nm2:
+    image: local/nm2:1.33.0
+    build:
+      context: ../el/nm2
+    container_name: nm2
+    hostname: nm2
+    restart: unless-stopped
+    ports:
+      - "30304:30303/tcp"
+      - "30304:30303/udp"
+    volumes:
+      - nm2-data:/opt/el/data
+    networks: [chain]
+  
+  nm3:
+    image: local/nethermind-nm3:1.33.0
+    build:
+      context: ../el/nm3
+    container_name: nm3
+    hostname: nm3
+    restart: unless-stopped
+    ports:
+      - "18545:8545"
+      - "30305:30303/tcp"
+      - "30305:30303/udp"
+    volumes:
+      - nm3-data:/opt/el/data
+    networks: [chain]
+
+networks:
+  chain:
+    driver: bridge
+    name: ${COMPOSE_PROJECT_NAME:-the-net}_chain
+
+volumes:
+  nm1-data:
+  nm2-data:
+  nm3-data:
