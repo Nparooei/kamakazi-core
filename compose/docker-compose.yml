@@ -6,9 +6,6 @@ services:
     container_name: nm1
     hostname: nm1
     restart: unless-stopped
-    ports:
-      - "30303:30303/tcp"
-      - "30303:30303/udp"
     volumes:
       - nm1-data:/opt/el/data
     networks: [chain]
@@ -20,9 +17,6 @@ services:
     container_name: nm2
     hostname: nm2
     restart: unless-stopped
-    ports:
-      - "30304:30303/tcp"
-      - "30304:30303/udp"
     volumes:
       - nm2-data:/opt/el/data
     networks: [chain]
