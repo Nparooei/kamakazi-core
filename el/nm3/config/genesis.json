@@ -4,7 +4,7 @@
   "engine": {
     "clique": {
       "params": {
-        "period": 6,
+        "period": 2,
         "epoch": 30000,
         "blockReward": "0x0"
       }
@@ -29,6 +29,8 @@
     "eip1283Transition": "0x0",
     "gasLimitBoundDivisor": "0x400",
     "homesteadTransition": "0x0",
+    "istanbulTransition": "0x0",
+    "berlinTransition": "0x0",
     "kip4Transition": "0xffffffffffffffff",
     "kip6Transition": "0xffffffffffffffff",
     "maxCodeSize": "0x6000",
@@ -50,7 +52,7 @@
     "author": "0x0000000000000000000000000000000000000000",
     "difficulty": "0x1",
     "extraData": "0x000000000000000000000000000000000000000000000000000000000000000016c18d4bcdb9f8b9ab65078cb98e5462f39109256b4759466e6dde5171af94d632a38cb9dd0a30b70000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "gasLimit": "0x1C9C380",
+    "gasLimit": "0x08F0D180",
     "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
     "timestamp": "0x0"
   },
