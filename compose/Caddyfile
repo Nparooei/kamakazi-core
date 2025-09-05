@@ -1,0 +1,4 @@
+archive.galaxychain.co {
+    encode zstd gzip
+    reverse_proxy archivenode:5000
+}

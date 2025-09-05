@@ -27,6 +27,20 @@ services:
     ports:
       - "5000:5000"
 
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [chain]
+
+
 networks:
   chain:
     driver: bridge
@@ -35,3 +49,5 @@ networks:
 volumes:
   nm1-data:
   nm2-data:
+  caddy_data:
+  caddy_config:
