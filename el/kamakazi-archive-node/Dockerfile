@@ -3,5 +3,5 @@ WORKDIR /opt/el
 COPY config/ /opt/el/config/
 COPY entrypoint/start-el.sh /usr/local/bin/start-el.sh
 RUN chmod +x /usr/local/bin/start-el.sh
-EXPOSE 8545 30303/tcp 30303/udp
+EXPOSE 5000 30303/tcp 30303/udp
 ENTRYPOINT ["/usr/local/bin/start-el.sh"]
