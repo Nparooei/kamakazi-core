@@ -1,4 +1,16 @@
 archive.galaxychain.co {
-    encode zstd gzip
-    reverse_proxy archivenode:5000
+    @allowed {
+        remote_ip 84.8.135.59
+        remote_ip 95.98.60.136
+        remote_ip 35.239.56.196
+    }
+
+    handle @allowed {
+        encode zstd gzip
+        reverse_proxy archivenode:5000
+    }
+
+    handle {
+        respond "Access Denied" 403
+    }
 }
